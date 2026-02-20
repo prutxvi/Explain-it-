@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #0f0f1a;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #0f0f1a;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 680px;
+  width: 90%;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #a78bfa;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+input {
+  flex: 1;
+  min-width: 260px;
+  padding: 13px 16px;
+  border: 2px solid #a78bfa;
+  border-radius: 10px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #7c3aed;
+}
+
+button {
+  padding: 13px 26px;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #6d28d9;
+  transform: scale(1.03);
+}
+
+button:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Result Card ── */
+.result-card {
+  background: #1a1a2e;
+  border: 1px solid #2d2d44;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  min-height: 110px;
+  transition: border-color 0.3s;
+}
+
+.result-card.active {
+  border-color: #7c3aed;
+}
+
+/* ── 3 Section Cards ── */
+.section {
+  background: #12122a;
+  border-left: 3px solid #7c3aed;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.tag {
+  display: block;
+  font-size: 0.75rem;
+  color: #a78bfa;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+}
+
+.section p {
+  font-size: 0.97rem;
+  color: #d1d5db;
+  line-height: 1.75;
+  min-height: 1.2em;
+}
+
+/* ── States ── */
+.loading {
+  color: #a78bfa;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+.error {
+  color: #f87171;
+  padding: 10px 0;
+}
+
+.container {
+  text-align: center;
+  max-width: 680px;
+  width: 90%;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #a78bfa;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+input {
+  flex: 1;
+  min-width: 260px;
+  padding: 13px 16px;
+  border: 2px solid #a78bfa;
+  border-radius: 10px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #7c3aed;
+}
+
+button {
+  padding: 13px 26px;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #6d28d9;
+  transform: scale(1.03);
+}
+
+button:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.result-card {
+  background: #1a1a2e;
+  border: 1px solid #2d2d44;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #d1d5db;
+  min-height: 110px;
+  transition: border-color 0.3s;
+}
+
+.result-card.active {
+  border-color: #7c3aed;
+}
+
+.loading {
+  color: #a78bfa;
+  font-style: italic;
+}
+
+.error {
+  color: #f87171;
+}
