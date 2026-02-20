@@ -64,6 +64,12 @@ Only return valid JSON. No extra text outside the JSON.`
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ ExplainIt AI running at http://localhost:${PORT}`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`✅ ExplainIt AI running at http://localhost:${PORT}`);
+  });
+}
+
+// Export for Vercel serverless
+module.exports = app;
