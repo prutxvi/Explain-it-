@@ -1,4 +1,8 @@
-require('dotenv').config();
+// Load .env only in local development (Vercel injects env vars automatically)
+if (!process.env.VERCEL) {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const path    = require('path');
 const { Groq } = require('groq-sdk');
@@ -41,7 +45,7 @@ Only return valid JSON. No extra text outside the JSON.`
       top_p: 1,
       stream: false,
       stop: null,
-      response_format: { type: 'json_object' }  // forces clean JSON output
+      response_format: { type: 'json_object' }
     });
 
     const raw = chatCompletion.choices[0]?.message?.content;
@@ -57,15 +61,14 @@ Only return valid JSON. No extra text outside the JSON.`
     }
 
     res.json({ explanation: parsed });
-
   } catch (err) {
     console.error('Groq Error:', err.message);
     res.status(500).json({ error: err.message });
   }
 });
 
-// For local development
-if (process.env.NODE_ENV !== 'production') {
+// Start server only when running locally (not on Vercel)
+if (!process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`✅ ExplainIt AI running at http://localhost:${PORT}`);
   });
