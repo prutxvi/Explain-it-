@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExplainIt AI — Learn Anything Instantly</title>
+  <meta name="description"
+    content="ExplainIt AI — Enter any topic and get a simple, clear explanation powered by Groq Llama AI. Built by Aurora Deemed University students." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-brand">
+      <span class="brand-icon">🧠</span>
+      <span class="brand-text">ExplainIt <span class="brand-ai">AI</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="project.html">Project</a></li>
+      <li><a href="login.html" class="nav-btn">Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+
+  <!-- ── CANVAS (Three.js) ─────────────────────────────────────────────────────── -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">
+        <span class="badge-dot"></span> Powered by Groq Llama 3.3
+      </div>
+      <h1 class="hero-title" id="heroTitle">
+        Learn <span class="gradient-text">Anything</span><br />Instantly with <span class="gradient-text">AI</span>
+      </h1>
+      <p class="hero-subtitle" id="heroSub">
+        Type any topic — from Photosynthesis to Blockchain —<br />
+        and get a crystal-clear, instant explanation.
+      </p>
+      <div class="hero-cta" id="heroCta">
+        <a href="login.html" class="btn-primary">
+          <span>Start Explaining</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="project.html" class="btn-secondary">View Project Info</a>
+      </div>
+
+      <!-- Floating stat cards -->
+      <div class="stat-row" id="statRow">
+        <div class="stat-card">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Team Members</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">AI</span>
+          <span class="stat-label">Groq Powered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Topics Covered</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating 3D cards (CSS) -->
+    <div class="float-cards">
+      <div class="float-card fc1">
+        <div class="fc-icon">💡</div>
+        <div class="fc-text">Summary</div>
+      </div>
+      <div class="float-card fc2">
+        <div class="fc-icon">📖</div>
+        <div class="fc-text">Explanation</div>
+      </div>
+      <div class="float-card fc3">
+        <div class="fc-icon">🌍</div>
+        <div class="fc-text">Real Example</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ───────────────────────────────────────────────────────────────── -->
+  <section class="section features" id="features">
+    <div class="section-inner">
+      <div class="section-badge">✨ Why ExplainIt?</div>
+      <h2 class="section-title">Everything You Need<br />to <span class="gradient-text">Understand Faster</span></h2>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Answers</h3>
+          <p>Get explanations in under 2 seconds. No waiting, no searching — just type and learn.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Three-Part Clarity</h3>
+          <p>Every topic broken into Summary, Explanation, and a Real-World Example.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗄️</div>
+          <h3>Search History</h3>
+          <p>Login to save your searches and revisit past explanations anytime.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Accounts</h3>
+          <p>Personal profiles with local SQLite database. Your data stays with you.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Any Topic</h3>
+          <p>Science, coding, history, maths — ExplainIt covers every subject under the sun.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Beautiful UI</h3>
+          <p>Typewriter animations, glassmorphism, and 3D visuals for a premium experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ───────────────────────────────────────────────────────────── -->
+  <section class="section howit" id="howit">
+    <div class="section-inner">
+      <div class="section-badge">🚀 How It Works</div>
+      <h2 class="section-title">Three Simple <span class="gradient-text">Steps</span></h2>
+
+      <div class="steps-row">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Type Your Topic</h3>
+          <p>Enter any topic, concept, word, or question into the search bar.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>AI Processes It</h3>
+          <p>Groq's Llama 3.3 model generates a structured, human-friendly explanation.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Read & Learn</h3>
+          <p>Watch your explanation appear with a typewriter effect — then save it to your history.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT / COLLEGE ─────────────────────────────────────────────────────────── -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <div class="section-badge">🎓 About This Project</div>
+      <h2 class="section-title">Built at <span class="gradient-text">Aurora Deemed University</span></h2>
+
+      <div class="about-grid">
+        <div class="about-info">
+          <div class="info-row"><span class="info-label">University</span><span class="info-val">Aurora Deemed to be
+              University</span></div>
+          <div class="info-row"><span class="info-label">Class</span><span class="info-val">313</span></div>
+          <div class="info-row"><span class="info-label">Course</span><span class="info-val">Frontend Development</span>
+          </div>
+          <div class="info-row"><span class="info-label">Faculty</span><span class="info-val">Santhosh Sir</span></div>
+          <div class="info-row"><span class="info-label">Year</span><span class="info-val">2025 – 2026</span></div>
+        </div>
+        <div class="team-preview">
+          <h3>The Team</h3>
+          <div class="team-chips">
+            <span class="chip chip-dev">👨‍💻 Toganti Pruthvi Raj (4157) — Developer</span>
+            <span class="chip">Vootukuri Keerthan (6277)</span>
+            <span class="chip">Vasireddy Akhil (6269)</span>
+            <span class="chip">Varri Hanuman (4162)</span>
+            <span class="chip">Nyayam Sri Charan Reddy (6288)</span>
+          </div>
+          <a href="project.html" class="btn-outline" style="margin-top:1.5rem;display:inline-flex;">
+            Full Project Details →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BOTTOM ───────────────────────────────────────────────────────────────── -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <h2>Ready to Learn Smarter?</h2>
+    <p>Join ExplainIt AI and unlock the fastest way to understand any topic.</p>
+    <a href="login.html" class="btn-primary">Create Free Account</a>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">🧠 ExplainIt AI</div>
+      <div class="footer-links">
+        <a href="project.html">Project</a>
+        <a href="app.html">Try It</a>
+        <a href="login.html">Login</a>
+      </div>
+      <div class="footer-copy">
+        © 2026 · Aurora Deemed University · Class 313 · Frontend Development
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="landing.js"></script>
+</body>
+
+</html>

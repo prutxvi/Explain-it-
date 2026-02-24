@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExplainIt AI — Learn Any Topic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="app.css" />
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a class="nav-brand" href="index.html">🧠 ExplainIt <span class="ai">AI</span></a>
+        <div class="nav-right">
+            <span class="user-chip" id="userChip" style="display:none"></span>
+            <button class="logout-btn" id="logoutBtn" style="display:none" onclick="logout()">Logout</button>
+            <a href="login.html" class="nav-login" id="loginLink">Login</a>
+        </div>
+    </nav>
+
+    <main class="app-main">
+        <!-- LEFT: Explainer -->
+        <div class="explainer-panel">
+            <div class="panel-header">
+                <h1>🧠 ExplainIt <span class="grad">AI</span></h1>
+                <p>Enter any topic — get an instant, simple explanation.</p>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="topicInput" placeholder="e.g. Photosynthesis, Binary Search, React Hooks..."
+                    autocomplete="off" />
+                <button id="explainBtn" onclick="explainTopic()">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+                    </svg>
+                    Explain It
+                </button>
+            </div>
+
+            <!-- Suggestions -->
+            <div class="suggestions">
+                <span class="sug-label">Try:</span>
+                <button class="sug-chip" onclick="setTopic('Quantum Computing')">Quantum Computing</button>
+                <button class="sug-chip" onclick="setTopic('Photosynthesis')">Photosynthesis</button>
+                <button class="sug-chip" onclick="setTopic('Machine Learning')">Machine Learning</button>
+                <button class="sug-chip" onclick="setTopic('Blockchain')">Blockchain</button>
+            </div>
+
+            <!-- Result Card -->
+            <div class="result-card" id="resultCard">
+                <div class="result-placeholder">
+                    <div class="ph-icon">✨</div>
+                    <p>Your explanation will appear here...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: History sidebar -->
+        <aside class="history-panel" id="historyPanel">
+            <div class="history-header">
+                <h3>📚 Your History</h3>
+                <span class="hist-sub" id="histSub">Login to save searches</span>
+            </div>
+            <div class="history-list" id="historyList">
+                <div class="hist-empty">
+                    <div style="font-size:2.5rem;margin-bottom:0.5rem">🔐</div>
+                    <p>Login to see your search history</p>
+                    <a href="login.html" class="hist-login-btn">Login / Sign Up</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

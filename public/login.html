@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login · ExplainIt AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="nav">
+        <a class="nav-brand" href="index.html">
+            <span>🧠</span> ExplainIt <span class="ai">AI</span>
+        </a>
+    </nav>
+
+    <main class="auth-main">
+        <div class="auth-card" id="authCard">
+
+            <!-- TABS -->
+            <div class="tab-bar">
+                <button class="tab active" id="tabLogin" onclick="switchTab('login')">Login</button>
+                <button class="tab" id="tabSignup" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+
+            <!-- ── LOGIN FORM ── -->
+            <form class="auth-form" id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-header">
+                    <h2>Welcome Back 👋</h2>
+                    <p>Sign in to access your AI learning dashboard.</p>
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="you@email.com" required />
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="loginPassword" placeholder="••••••••" required />
+                        <button type="button" class="eye-btn" onclick="togglePw('loginPassword', this)">👁</button>
+                    </div>
+                </div>
+                <div class="msg-box" id="loginMsg"></div>
+                <button type="submit" class="submit-btn" id="loginBtn">
+                    <span>Sign In</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+                <p class="switch-txt">No account? <a onclick="switchTab('signup')">Sign up free</a></p>
+            </form>
+
+            <!-- ── SIGNUP FORM ── -->
+            <form class="auth-form hidden" id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-header">
+                    <h2>Create Account 🚀</h2>
+                    <p>Join ExplainIt AI and start learning smarter today.</p>
+                </div>
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" placeholder="Your full name" required />
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" id="signupEmail" placeholder="you@email.com" required />
+                </div>
+                <div class="field">
+                    <label>Roll Number <span class="opt">(optional)</span></label>
+                    <input type="text" id="signupRoll" placeholder="e.g. 4157" />
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="signupPassword" placeholder="••••••••" required minlength="6" />
+                        <button type="button" class="eye-btn" onclick="togglePw('signupPassword', this)">👁</button>
+                    </div>
+                </div>
+                <div class="msg-box" id="signupMsg"></div>
+                <button type="submit" class="submit-btn" id="signupBtn">
+                    <span>Create Account</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+                <p class="switch-txt">Already have an account? <a onclick="switchTab('login')">Login</a></p>
+            </form>
+
+        </div>
+
+        <!-- College badge -->
+        <div class="college-badge">
+            🎓 Aurora Deemed University · Class 313 · Frontend Development
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>
