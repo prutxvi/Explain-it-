@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "AI Topic Explainer (Frontend Only)",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "echo 'No build step required'"
+    "start": "npx serve public",
+    "dev": "npx serve public"
   },
   "engines": {
     "node": ">=18.x"
